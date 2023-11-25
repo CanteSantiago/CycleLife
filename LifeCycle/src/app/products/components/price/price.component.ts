@@ -16,6 +16,8 @@ export class PriceComponent implements OnInit, OnChanges, OnDestroy{
 
   ngOnInit(): void {
     console.log('Componente HIJO: ngOnInit');
+    this.intervarl$ = interval(1000).subscribe( value => console.log(`Tick: ${value}`) );
+
  }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -24,6 +26,7 @@ export class PriceComponent implements OnInit, OnChanges, OnDestroy{
   }
   ngOnDestroy(): void {
     console.log('Componente HIJO: ngOnDestroy');
+    this.intervarl$?.unsubscribe();
   }
 
 }

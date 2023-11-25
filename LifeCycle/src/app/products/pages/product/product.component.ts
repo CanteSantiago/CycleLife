@@ -13,11 +13,11 @@ export class ProductComponent implements OnInit, OnChanges, DoCheck, AfterConten
   constructor() {
     console.log('Constructor')
   }
-
+//primera peticion http, timer, etc, despues de que el componente de angular sea completamente montado
   ngOnInit(): void {
     console.log('ngOnInit');
   }
-
+// si necesitamos estar pendientes de los cambios de las propiedes
   ngOnChanges(changes: SimpleChanges): void {
     console.log({changes})
     console.log('ngOnChanges');
@@ -42,7 +42,7 @@ export class ProductComponent implements OnInit, OnChanges, DoCheck, AfterConten
   ngAfterViewChecked(): void {
     console.log('ngAfterViewChecked');
   }
-
+// Hacer limpiezas
   ngOnDestroy(): void {
     console.log('ngOnDestroy');
   }
